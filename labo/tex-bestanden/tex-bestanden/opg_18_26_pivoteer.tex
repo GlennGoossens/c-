@@ -1,0 +1,24 @@
+\beginoef
+Deze oefening geldt als extra uitdaging. Te maken als je (redelijk) vlot door alle oefeningen heen fietste.
+
+Schrijf een procedure \verb}pivoteer(begin,na_einde,pivot)}. De drie parameters zijn pointers naar karakters in dezelfde array.
+De pointer \verb}pivot} wijst naar een element tussen de elementen waar de pointers \verb}begin} en \verb}na_einde} naar wijzen.
+De procedure wisselt de elementen symmetrisch rond de pivot. Ligt de pivot niet netjes in het midden tussen de grenzen \verb}begin} en \verb}na_einde}, 
+dan wordt het wisselen beperkt. Een voorbeeld: indien de elementen vanaf \verb}begin} tot net voor \verb}na_einde} gelijk zijn aan
+\verb}a b c d e f g h} en \verb}pivot} wijst naar de letter \verb}c}, dan wordt dit rijtje na afloop van de procedure \verb}e d c b a f g h}.
+
+Schrijf en procedure \verb}schrijf(begin,na_einde)}. De twee parameters zijn pointers naar karakters in dezelfde array. 
+De procedure schrijft alle elementen in de array uit, te beginnen bij \verb}begin} en eindigend net voor \verb}na_einde}.
+Gebruik schuivende pointers.
+
+Controleer met het hoofdprogramma hieronder. Is de uitvoer van je programma geen leesbare uitspraak, dan schort er nog wat aan.
+\begin{verbatim}
+main(){
+    char tekst[] = {'b','d','?','z','g','o','e','z','e','b',
+                    ' ','d','i','g','!','h','o','s','v'};
+    pivoteer(tekst+7,tekst+12,tekst+9);
+    schrijf(tekst+4,tekst+15);
+}
+\end{verbatim}
+\endoef
+

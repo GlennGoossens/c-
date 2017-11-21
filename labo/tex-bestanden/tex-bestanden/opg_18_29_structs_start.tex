@@ -1,0 +1,26 @@
+\beginoef
+%
+Gegeven onderstaande code. 
+Declareer een struct met naam \verb}persoon}. Elke persoon onthoudt zijn naam (maximum 80 letters) en zijn leeftijd (geheel getal).
+Declareer een array van 6 personen. Vul hun namen en leeftijden in; die vind je (in volgorde) in de arrays \verb}namen} en
+\verb}leeftijden}. Schrijf daarna 6 regels uit van de vorm "\verb}Evi is 21 jaar oud.}".
+\begin{footnotesize}
+\begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+#define AANTAL 6
+#define LENGTE ... /* aan te vullen */
+
+int main(){
+    int i;
+    char * namen[AANTAL] = {"Evi","Jaro","Timen","Youri","Ashaf","Jennifer"};
+    int leeftijden[AANTAL] = {21,30,18,14,22,19};
+
+    /* ... */	
+
+    return 0;
+}
+\end{verbatim}
+\end{footnotesize}
+\endoef
+

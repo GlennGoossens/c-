@@ -1,0 +1,22 @@
+\beginoef
+\begin{enumerate}
+\item 
+Schrijf een functie \verb}lees()} die een lijn inleest vanop het klavier, en een nieuwe c-string teruggeeft. Je weet niet hoe lang de tekst is, maar na oproep van de functie neemt de tekst
+niet meer geheugenplaats in dan strikt noodzakelijk. Indien de tekst langer is dan 1000 karaktertekens, breek je het af na het 1000$^e$. Test dit uit door de constante 1000 aan te passen - uiteraard.
+\item
+Test je functie uit in het onderstaande (half-afgewerkte) hoofdprogramma. 
+Vervolledig het hoofdprogramma.
+\end{enumerate}
+\begin{verbatim}
+int main(){
+    int i;
+    for(i=0; i<5; i++){    
+        char * tekst = lees();
+        printf("Ik las in %s.\n",tekst);
+    }	
+    return 0;
+}
+\end{verbatim}
+
+\endoef
+

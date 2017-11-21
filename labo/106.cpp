@@ -12,16 +12,30 @@ typedef struct person{
 	double lengte;
 }person;
 
+double grootte(string e){
+	return e.size();
+}
+
+double grootte(double e){
+	return e;
+}
+
+
+
 template <class T>
 T grootste(T array[],int n){
+	double maxElement = grootte(array[0]);
 	T max = array[0];
 	for(int i = 0; i < n;i++){
-		if(max < array[i]){
+		if(maxElement < grootte(array[i])){
+			maxElement = grootte(array[i]);
 			max = array[i];
 		}
 	}
 	return max;
 }
+
+
 
 void initialiseer(person &p, string n, int l, double len){
 	p.leeftijd = l;

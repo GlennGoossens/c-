@@ -1,0 +1,59 @@
+\beginoef
+
+Gegeven onderstaande code.
+\begin{footnotesize}
+\begin{verbatim}
+#include <memory>
+#include <iostream>
+using namespace std;
+
+void schrijf(const string * s, int aantal){
+    cout<<endl;
+    for(int i=0; i<aantal-1; i++){
+        cout<<s[i]<<" - ";
+    }
+    cout<<s[aantal-1];
+}
+
+void verwijder(string * s, int aantal, int volgnr){
+    if(volgnr < aantal){
+        for(int i = volgnr; i < aantal-1; i++){
+            s[i] = s[i+1];	
+        }
+    }
+}
+
+int main(){
+	
+    string namen[]={"Rein","Ada","Eppo"};
+	
+    schrijf(namen,3);
+    verwijder(namen,3,0);
+    schrijf(namen,3);
+	
+    return 0;
+}
+\end{verbatim}
+\end{footnotesize}
+Je weet dat de regel code \verb}s[i] = s[i+1];} het kopi\"eren van een string impliceert.
+Dat moeten we vermijden, want een string kan in principe heel groot zijn. 
+Schrijf twee nieuwe procedures, die bij het onderstaande hoofdprogramma horen.
+We bewaren nu (unique) pointers in de array, zodat we bij het opschuiven van de elementen in de array
+enkel pointers moeten verleggen, en geen kopie\"en maken.
+\begin{footnotesize}
+\begin{verbatim}
+int main(){
+    unique_ptr<string> pnamen[]={make_unique<string>("Rein"),
+                                 make_unique<string>("Ada"), 
+                                 make_unique<string>("Eppo")};	 
+    schrijf(pnamen,3);
+    verwijder(pnamen,3,0);
+    schrijf(pnamen,3);
+	
+    return 0;
+}
+\end{verbatim}
+\end{footnotesize}
+Probeer ook eens het laatste element uit de array te verwijderen!
+
+\endoef
