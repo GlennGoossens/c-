@@ -4,6 +4,7 @@
 #include <stack>
 #include <string>
 #include <iterator>
+#include <map>
 using namespace std;
 
 struct Persoon {
@@ -51,8 +52,23 @@ ostream& operator<<(ostream& out,const set<T> & s){
 
 //(schrijf elementen uit onder elkaar; begin een nieuwe regel voor het eerste element)
 template<typename T>
-ostream& operator<<(ostream& out,const stack<T> & s){
+ostream& operator<<(ostream& out,const stack<T> &  s){
+  stack<T> h = s;
+  while(!h.empty()){
+    out << h.top() << endl;
+    h.pop();
+  }
+  return out;
+}
 
+//map,waarbij je dus zowel type van sleutel als type van bijhorende data ongespecifieerd laat
+//(schrijf sleutels onder elkaar uit; elke sleutel wordt gevolgd door een pijltje en zijn bijhorende data)
+template<typename K,typename T>
+ostream& operator<<(ostream& out,const map<K,T> & m){
+  for(pair<K,T> p : m){
+    out << p.first << " -> " << p.second << endl;
+  }
+  return out;
 }
 
 int main(){
@@ -77,6 +93,11 @@ int main(){
   stacks.push("Glenn");
   stacks.push("Bert");
   cout << stacks;
+
+  map<string,int> lft;
+  lft["Glenn"] = 22;
+  lft["Bert"] = 23;
+  cout << lft;
 
   return 0;
 }
