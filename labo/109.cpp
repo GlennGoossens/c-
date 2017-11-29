@@ -4,16 +4,14 @@
 using namespace std;
 
 void schrijf(const string s,const int * t, int aantal){
-  int i;
   cout<< s << endl;
-  for(int i =0;i < aantal-1;i++){
+  for(int i =0;i < aantal;i++){
   	cout<<t[i] << " ";
   }
   cout<<endl;
 }
 
-template<typename Func>
-void vul_array(const int * a,const int *b, int * c,Func func ,int aantal){
+void vul_array(const int * a,const int *b, int * c,function<int(int,int)> func ,int aantal){
   for(int i = 0;i < aantal;i++){
     c[i] = func(a[i],b[i]);
   }

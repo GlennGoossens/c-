@@ -9,7 +9,7 @@ int main(){
 	ifstream inv;
 	inv.open("lord.txt");
 	if(inv.is_open()) cout<< "openen gelukt"<<endl;
-	while(inv.good()){
+	while(! inv.fail()){
 		c = inv.get();
 		if(islower(c)){
 			i = c - 'a';

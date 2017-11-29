@@ -24,7 +24,7 @@ int main(){
   for(int k = 0; k != 5 ; k++){
     vector<int> vect(k);
     for(int l = 0; l != k;l++){
-      vect[l] = l *10;
+      vect[l] = l *10 + 10;
     }
     vec.push_back(vect);
   }

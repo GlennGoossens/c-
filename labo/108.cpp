@@ -10,19 +10,28 @@ std::unique_ptr<T> make_unique(Args&&... args) {
 void schrijf(const unique_ptr<string> * s,int aantal){
 	cout<<endl;
 	for(int i = 0;i< aantal-1;i++){
-		cout<<*s[i].get()<<" - ";
+		if(s[i]==nullptr){
+			cout<<"NULL"<< " - ";
+		}else{
+			cout<<*s[i]<<" - ";
+		}
 	}
-	cout<<*s[aantal-1].get();
-	cout<<endl;
+	if(s[aantal-1] == nullptr){
+		cout<<"NULL";
+	}else{
+		cout<<*s[aantal-1];
+	}
 }
 
-void verwijder(const unique_ptr<string> * s,int aantal,int positie){
-	if(positie < aantal){
+void verwijder(unique_ptr<string> * s,int aantal,int positie){
+	if(positie < aantal-1){
 		//verwijder pointer op positie naar positie +1
-		for(int i =0;i<aantal-1;i++){
-			*s[i] = *s[i+1];
+		for(int i =positie;i<aantal-1;i++){
+			s[i] = move(s[s+1]);
 			cout<<endl;
 		}
+	}else if(positie == aantal-1){
+		s[positie].reset();
 	}
 }
 
