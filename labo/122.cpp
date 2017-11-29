@@ -58,7 +58,7 @@ void deel3(){
     Breuk d(2,10);
     Breuk e(3);
     cout << d << " is stambreuk: "<<is_stambreuk(d)<<endl;
-    /*Breuk f(3,4);
+    Breuk f(3,4);
     cout << endl << "We starten van een breuk, en tellen er telkens een eenheid bij op: " << endl << endl;
     for(int i=0; i<10; i++){
         cout <<i<<" meer dan "<< f << " is " << (i+f) << " = " << (f+i) << endl;
@@ -74,13 +74,13 @@ void deel3(){
     for(Breuk b : verz){
         cout << b << endl;
     }
-    */
+    
 }
    
 
 int main(){
-    deel1();
-    deel2();
-   // deel3();
+   // deel1();
+   // deel2();
+    deel3();
     return 0;
 }

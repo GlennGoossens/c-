@@ -160,3 +160,26 @@ Breuk Breuk::operator+(const Breuk & b)const{
 
    return  h;
 }
+
+string is_stambreuk(const Breuk & b){
+    Breuk hulp(b);
+    hulp.normaliseer();
+    if(hulp.teller == 1){
+        return "JA";
+    }else{
+        return "NEEN";
+    }
+}
+
+Breuk operator+( int a, const Breuk & b ){
+     Breuk h(b);
+     h.teller += a * h.noemer;
+     return h; 
+}
+
+bool Breuk::operator<(const Breuk & b)const{
+    Breuk h(*this);
+    Breuk m(b);
+    zetNoemerGelijk(h,m);
+    return h.teller < m.teller;
+}

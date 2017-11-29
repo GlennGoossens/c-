@@ -15,9 +15,12 @@ class Breuk{
         Breuk & operator+=(const Breuk &);
         Breuk & operator++();
         Breuk operator++(int);
+        bool operator<(const Breuk &)const;
         bool operator==(const Breuk &);
         bool operator!=(const Breuk &);
         friend istream& operator>>(istream &, Breuk &);
+        friend string is_stambreuk(const Breuk &);
+        friend Breuk operator+( int , const Breuk &);
     private:
         friend void zetNegatiefOm(Breuk &);
         friend void zetNoemerGelijk(Breuk &,Breuk &);
