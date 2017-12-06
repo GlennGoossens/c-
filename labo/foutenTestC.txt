@@ -1,0 +1,28 @@
+1)
+while(g){
+    g%10
+    if(frequentie[g%10]){
+        return 0;
+    }
+    g/=10;
+}
+return 1;
+
+2)
+void voegtoe(const char * w,knoop ** l){
+    knoop * new = malloc(sizeof(knoop));
+    nieuw->woord = malloc(strlen(w)+1);
+    strcpy(nieuw->woord,w);
+    strcmp
+}
+_______________________________________
+knoop ** maak(const knoop * l){
+        knoop ** t = malloc(26* sizeof(knoop*));
+        -> for lus alles op 0;
+        voegtoe(l->woord,*t[l->woord[0]- 'a']);
+        return t;
+}
+
+3)
+void pointers
+zie oefening uit labo's
